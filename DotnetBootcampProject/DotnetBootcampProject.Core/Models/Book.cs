@@ -13,5 +13,6 @@ namespace DotnetBootcampProject.Core.Models
         public string Genre { get; set; }
         public int PublisherId { get; set; }
         public Publisher Publisher { get; set; }
+        public ICollection<PublicationInfo> PublicationInfo { get; set; }
     }
 }
