@@ -1,8 +1,13 @@
 using DotnetBootcampProject.Core.Repositories;
+using DotnetBootcampProject.Core.Services;
 using DotnetBootcampProject.Core.UnitOfWorks;
 using DotnetBootcampProject.Repository;
 using DotnetBootcampProject.Repository.Repositories;
 using DotnetBootcampProject.Repository.UnitOfWorks;
+using DotnetBootcampProject.Service.Mapping;
+using DotnetBootcampProject.Service.Services;
+using DotnetBootcampProject.Service.Validations;
+using FluentValidation.AspNetCore;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
@@ -17,6 +22,10 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped(typeof(IGenericRepository<>),typeof(GenericRepository<>));
+builder.Services.AddScoped(typeof(IService<>),typeof(Service<>));
+builder.Services.AddScoped<IPublisherService, PublisherService>();
+builder.Services.AddAutoMapper(typeof(MapProfile));
+builder.Services.AddControllers().AddFluentValidation(x => { x.RegisterValidatorsFromAssemblyContaining<PublisherDtoValidator>(); });
 
 builder.Services.AddDbContext<AppDbContext>(x =>
 {
