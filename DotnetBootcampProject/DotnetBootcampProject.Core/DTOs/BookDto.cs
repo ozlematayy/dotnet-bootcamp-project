@@ -11,5 +11,6 @@ namespace DotnetBootcampProject.Core.DTOs
         public string BookName { get; set; }
         public string AuthorName { get; set; }
         public string Genre { get; set; }
+        public int PublisherId { get; set; }
     }
 }

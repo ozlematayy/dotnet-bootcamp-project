@@ -10,5 +10,6 @@ namespace DotnetBootcampProject.Core.DTOs
     {
         public DateTime PublicationDate { get; set; }
         public int Edition { get; set; }
+        public int BookId { get; set; }
     }
 }

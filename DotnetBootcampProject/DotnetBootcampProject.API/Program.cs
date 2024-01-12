@@ -24,6 +24,8 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped(typeof(IGenericRepository<>),typeof(GenericRepository<>));
 builder.Services.AddScoped(typeof(IService<>),typeof(Service<>));
 builder.Services.AddScoped<IPublisherService, PublisherService>();
+builder.Services.AddScoped<IBookService, BookService>();
+builder.Services.AddScoped<IPublicationInfoService, PublicationInfoService>();
 builder.Services.AddAutoMapper(typeof(MapProfile));
 builder.Services.AddControllers().AddFluentValidation(x => { x.RegisterValidatorsFromAssemblyContaining<PublisherDtoValidator>(); });
 
