@@ -1,3 +1,7 @@
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
+using DotnetBootcampProject.API.Middlewares;
+using DotnetBootcampProject.API.Modules;
 using DotnetBootcampProject.Core.Repositories;
 using DotnetBootcampProject.Core.Services;
 using DotnetBootcampProject.Core.UnitOfWorks;
@@ -20,13 +24,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
-builder.Services.AddScoped(typeof(IGenericRepository<>),typeof(GenericRepository<>));
-builder.Services.AddScoped(typeof(IService<>),typeof(Service<>));
-builder.Services.AddScoped<IPublisherService, PublisherService>();
-builder.Services.AddScoped<IBookService, BookService>();
-builder.Services.AddScoped<IPublicationInfoService, PublicationInfoService>();
 builder.Services.AddAutoMapper(typeof(MapProfile));
+builder.Services.AddHttpContextAccessor();
 builder.Services.AddControllers().AddFluentValidation(x => { x.RegisterValidatorsFromAssemblyContaining<PublisherDtoValidator>(); });
 
 builder.Services.AddDbContext<AppDbContext>(x =>
@@ -36,6 +35,12 @@ builder.Services.AddDbContext<AppDbContext>(x =>
         option.MigrationsAssembly(Assembly.GetAssembly(typeof(AppDbContext)).GetName().Name);
     });
 });
+
+
+builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
+builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder => containerBuilder.RegisterModule(new RepoModuleService()));
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -46,6 +51,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseCustomException();
+app.UseRouting();
 
 app.UseAuthorization();
 
