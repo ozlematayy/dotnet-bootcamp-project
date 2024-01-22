@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetBootcampProject.Core", "DotnetBootcampProject.Core\DotnetBootcampProject.Core.csproj", "{42DE9246-F440-497B-8AEC-386FD088221A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotnetBootcampProject.Core", "DotnetBootcampProject.Core\DotnetBootcampProject.Core.csproj", "{42DE9246-F440-497B-8AEC-386FD088221A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetBootcampProject.Repository", "DotnetBootcampProject.Repository\DotnetBootcampProject.Repository.csproj", "{9F7FBFC9-1A77-4157-A572-29263EC8FDFF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotnetBootcampProject.Repository", "DotnetBootcampProject.Repository\DotnetBootcampProject.Repository.csproj", "{9F7FBFC9-1A77-4157-A572-29263EC8FDFF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetBootcampProject.Service", "DotnetBootcampProject.Service\DotnetBootcampProject.Service.csproj", "{ADEF69DE-5CC9-4BAA-8136-AFF522B5B4AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotnetBootcampProject.Service", "DotnetBootcampProject.Service\DotnetBootcampProject.Service.csproj", "{ADEF69DE-5CC9-4BAA-8136-AFF522B5B4AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetBootcampProject.API", "DotnetBootcampProject.API\DotnetBootcampProject.API.csproj", "{47B3D45C-6F5F-433C-9FFC-A7D386FBDEE6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotnetBootcampProject.API", "DotnetBootcampProject.API\DotnetBootcampProject.API.csproj", "{47B3D45C-6F5F-433C-9FFC-A7D386FBDEE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetBootcampProject.Test", "DotnetBootcampProject.Test\DotnetBootcampProject.Test.csproj", "{666EE95D-23F7-4D26-B6D6-CAECF0274115}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{47B3D45C-6F5F-433C-9FFC-A7D386FBDEE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47B3D45C-6F5F-433C-9FFC-A7D386FBDEE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47B3D45C-6F5F-433C-9FFC-A7D386FBDEE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{666EE95D-23F7-4D26-B6D6-CAECF0274115}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{666EE95D-23F7-4D26-B6D6-CAECF0274115}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{666EE95D-23F7-4D26-B6D6-CAECF0274115}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{666EE95D-23F7-4D26-B6D6-CAECF0274115}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
